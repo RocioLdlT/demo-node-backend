@@ -15,14 +15,15 @@
     "license": "ISC",
     "type": "module",
     "dependencies": {
-
         "cross-env": "^10.1.0",
-        "prompt-sync": "^4.2.0"
+        "prompt-sync": "^4.2.0",
+        "serve-static": "^2.2.1"
     },
     "devDependencies": {
         "@eslint/js": "^10.0.1",
         "@types/node": "^25.5.0",
         "@types/prompt-sync": "^4.2.3",
+        "@types/serve-static": "^2.2.0",
         "eslint": "^10.0.3",
         "globals": "^17.4.0",
         "prettier": "^3.8.1",
