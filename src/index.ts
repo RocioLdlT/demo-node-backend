@@ -18,6 +18,7 @@ const notes = [
     },
 ];
 
+
 const app = (request: IncomingMessage, response: ServerResponse) => {
     console.log(request.url, request.method);
     console.log(request.headers);
@@ -51,6 +52,7 @@ const app = (request: IncomingMessage, response: ServerResponse) => {
                 response.setHeader('Content-type', 'application-json');
                 response.write(JSON.stringify(notes));
                 //Serialización. write, no esta leyendo las notas --(chunk)-- por lo que mediante la serialización le facilitamos que lo haga.
+                response.write(notes)
                 response.end();
                 break;
             default:
@@ -64,6 +66,7 @@ const app = (request: IncomingMessage, response: ServerResponse) => {
         console.error((error as Error).message);
     }
 };
+
 const server = createServer(app);
 
 server.listen(PORT, () => {
